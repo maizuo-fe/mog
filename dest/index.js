@@ -91,32 +91,11 @@
    return require;
 })({
 1: [function(require, module, exports) {
-exports.Merror = require('./merror');
 exports.Mog = require('./mog');
 
-}, {"./merror":2,"./mog":3}],
+}, {"./mog":2}],
 2: [function(require, module, exports) {
-var Merror = function (message, code, description) {
-  if (!(this instanceof Merror)) {
-    return new Merror(message, code, description);
-  }
-  this.name = 'MaizuoError';
-  this.message = message || '';
-  this.description = description || '';
-  this.code = code || -1;
-  this.stack = '';
-  if (Error.captureStackTrace) {
-    Error.captureStackTrace(this, Merror);
-  }
-  return this;
-};
-Merror.prototype = Error.prototype;
-
-module.exports = Merror;
-
-}, {}],
-3: [function(require, module, exports) {
-var Merror = require('./merror');
+var Merror = require('maizuo-fe/merror');
 
 var ISDEBUG = (function () {
   try {
@@ -188,5 +167,5 @@ var exports = (function () {
 
 module.exports = Mog;
 
-}, {"./merror":2}]}, {}, {"1":""})
+}, {}]}, {}, {"1":""})
 );

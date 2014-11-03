@@ -1,4 +1,4 @@
-var Merror = require('./merror');
+var Merror = require('maizuo-fe/merror');
 
 var ISDEBUG = (function () {
   try {
