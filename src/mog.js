@@ -1,14 +1,5 @@
+var Debug = require('maizuo-fe/debug');
 var Merror = require('maizuo-fe/merror');
-
-var ISDEBUG = (function () {
-  try {
-    if (window.localStorage) {
-      return JSON.parse(localStorage.getItem('debug:setting')).enabled;
-    }
-  } catch (e) {
-    return false;
-  }
-})();
 
 var HOST = 'm.maizuo.com';
 var URL = '/mog';
@@ -18,11 +9,14 @@ var Mog = function () {
     return new Mog();
   }
   this._data = {};
-  this._environment = ISDEBUG ? 'development' : 'production';
+  this._environment = Debug.isEnabled() ? 'development' : 'production';
   return this;
 };
 
 Mog.prototype.err = function (err) {
+  if (!(err instanceof Error)) {
+    return this.err(Merror(this, arguments));
+  }
   this._data.errName = err.name || '';
   this._data.errMessage = err.message || '';
   this._data.errType = err.code || -1;

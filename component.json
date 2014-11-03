@@ -1,0 +1,19 @@
+{
+  "name": "mog",
+  "repo": "maizuo-fe/mog",
+  "description": "logger for maizuo frontend",
+  "version": "0.1.0",
+  "keywords": [
+    "log",
+    "maizuo"
+  ],
+  "scripts": [
+    "src/mog.js"
+  ],
+  "main": "src/mog.js",
+  "dependencies": {
+    "maizuo-fe/debug": "*",
+    "maizuo-fdde/merror": "*"
+  },
+  "license": "MIT"
+}
