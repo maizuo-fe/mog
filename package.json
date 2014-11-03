@@ -18,10 +18,7 @@
   "author": "imyelo",
   "license": "MIT",
   "devDependencies": {
-    "duo": "^0.8.8",
     "gulp": "^3.8.9",
-    "gulp-util": "^3.0.1",
-    "lodash": "^2.4.1",
-    "through2": "^0.6.3"
+    "gulp-duojs": "^0.3.0"
   }
 }
